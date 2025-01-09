@@ -13,10 +13,10 @@ const generateContacts = async (number) => {
             newContacts.push(createFakeContact());
         }
         // додала нові контакти до тих що є
-        const addNewContacts = [...newReadContacts, ...newContacts];
+        const allNewContacts = [...newReadContacts, ...newContacts];
 
         // записала новий список контактів назад у файд
-        await writeContacts(addNewContacts);
+        await writeContacts(allNewContacts);
         console.log(`Successfully added  new contacts`);
     } catch (err) {
         console.error('Error:', err);
